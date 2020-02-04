@@ -2,12 +2,6 @@ FROM ubuntu:disco
 
 MAINTAINER Gacel Fernando Muñoz Diaz
 
-RUN apt update
-
-# GNUstep
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-RUN apt-get install -y --no-install-recommends gnustep gnustep-devel
-
 RUN apt update && apt -y install \
                                 # optional
                                 vim \
@@ -49,8 +43,8 @@ RUN SDK_VERSION=$OSXCROSS_SDK_VERSION                           \
     && curl -L -o ./tarballs/MacOSX${OSXCROSS_SDK_VERSION}.sdk.tar.xz \
     ${OSXCROSS_SDK_URL} \
     && yes | PORTABLE=true ./build.sh &&                           \
-    ./build_compiler_rt.sh
-
+    ./build_compiler_rt.sh \
+    ln -s /osxcross/target/SDK/MacOSX10.10.sdk/usr/include/objc/NSObjCRuntime.h /osxcross/target/SDK/MacOSX10.10.sdk/usr/include/objc/NSObjcRuntime.h
 
 # cross compile windows x64 dependencies
 RUN cd /tmp \
