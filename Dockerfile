@@ -1,6 +1,6 @@
 FROM ubuntu:disco
 
-MAINTAINER Daniel Porto <daniel.porto@gmail.com>
+MAINTAINER Gacel Fernando Muñoz Diaz
 
 RUN apt update
 
