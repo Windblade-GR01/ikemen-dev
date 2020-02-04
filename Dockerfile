@@ -44,8 +44,8 @@ RUN SDK_VERSION=$OSXCROSS_SDK_VERSION                           \
     ${OSXCROSS_SDK_URL} \
     && yes | PORTABLE=true ./build.sh &&                           \
     ./build_compiler_rt.sh \
-    ln -s /osxcross/target/SDK/MacOSX10.10.sdk/usr/include/objc/NSObjCRuntime.h /osxcross/target/SDK/MacOSX10.10.sdk/usr/include/objc/NSObjcRuntime.h
-
+    
+    
 # cross compile windows x64 dependencies
 RUN cd /tmp \
          && curl -SLO https://kcat.strangesoft.net/openal-binaries/openal-soft-1.19.1-bin.zip \
@@ -74,6 +74,8 @@ ENV CGO_ENABLED=1
 # ENV CC=o64-clang 
 # ENV CXX=o64-clang++
 ENV PATH=$PATH:/opt/osxcross/target/bin
+ENV PATH=$PATH:/opt/osxcross/target/SDK/MacOSX${OSXCROSS_SDK_VERSION}.sdk/usr/include
+ENV PATH=$PATH:/opt/osxcross/target/SDK/MacOSX${OSXCROSS_SDK_VERSION}.sdk/usr
 
 # windows crosscompile envs
 # export CC=x86_64-w64-mingw32-gcc
