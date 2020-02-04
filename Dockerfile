@@ -2,6 +2,12 @@ FROM ubuntu:disco
 
 MAINTAINER Daniel Porto <daniel.porto@gmail.com>
 
+RUN apt update
+
+# GNUstep
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN apt-get install -y --no-install-recommends gnustep gnustep-devel
+
 RUN apt update && apt -y install \
                                 # optional
                                 vim \
