@@ -5,6 +5,7 @@ MAINTAINER Daniel Porto <daniel.porto@gmail.com>
 RUN apt update && apt -y install \
                                 # optional
                                 vim \
+                                mc \
                                 # required for downloading external libraries
                                 curl \ 
                                 unzip \
@@ -45,7 +46,7 @@ RUN SDK_VERSION=$OSXCROSS_SDK_VERSION                           \
     ./build_compiler_rt.sh
 
 
-# cross compile windows dependencies
+# cross compile windows x64 dependencies
 RUN cd /tmp \
          && curl -SLO https://kcat.strangesoft.net/openal-binaries/openal-soft-1.19.1-bin.zip \
          && unzip openal-soft-1.19.1-bin.zip \
@@ -54,6 +55,14 @@ RUN cd /tmp \
          && mv /tmp/openal-soft-1.19.1-bin/bin/Win64/soft_oal.dll /lib/gcc/x86_64-w64-mingw32/8.3-win32/soft_oal.dll \
          && rm -rf openal-soft-1.19.1-bin.zip openal-soft-1.19.1-bin
 
+# cross compile win32 dependencies
+RUN cd /tmp \
+         && curl -SLO https://kcat.strangesoft.net/openal-binaries/openal-soft-1.19.1-bin.zip \
+         && unzip openal-soft-1.19.1-bin.zip \
+         && mv /tmp/openal-soft-1.19.1-bin/include/AL /lib/gcc/i686-w64-mingw32/8.3-win32/include \
+         && mv /tmp/openal-soft-1.19.1-bin/libs/Win32/libOpenAL32.dll.a /lib/gcc/i686-w64-mingw32/8.3-win32/libopenal32.dll.a \
+         && mv /tmp/openal-soft-1.19.1-bin/bin/Win32/soft_oal.dll /lib/gcc/i686-w64-mingw32/8.3-win32/soft_oal.dll \
+         && rm -rf openal-soft-1.19.1-bin.zip openal-soft-1.19.1-bin
 
 # golang envs
 ENV PATH=$PATH:/usr/lib/go-1.12/bin
