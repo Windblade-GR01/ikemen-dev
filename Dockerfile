@@ -46,7 +46,6 @@ RUN SDK_VERSION=$OSXCROSS_SDK_VERSION                           \
     ./build_compiler_rt.sh
 
 RUN cd /
-RUN mkdir /tmp
 
 # cross compile windows x64 dependencies
 RUN cd /tmp \
