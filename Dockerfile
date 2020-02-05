@@ -42,9 +42,10 @@ RUN SDK_VERSION=$OSXCROSS_SDK_VERSION                           \
     ./tools/get_dependencies.sh \
     && curl -L -o ./tarballs/MacOSX${OSXCROSS_SDK_VERSION}.sdk.tar.xz \
     ${OSXCROSS_SDK_URL} \
-    && yes | PORTABLE=true ./build.sh &&                           \
-    ./build_compiler_rt.sh \
-    
+    && yes | PORTABLE=true ./build.sh && \
+    ./build_compiler_rt.sh
+
+RUN cd /
 RUN mkdir /tmp
 
 # cross compile windows x64 dependencies
