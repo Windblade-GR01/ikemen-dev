@@ -2,6 +2,12 @@ FROM ubuntu:disco
 
 MAINTAINER Gacel Fernando Muñoz Diaz
 
+RUN apt update
+
+# GNUstep
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN apt-get install -y --no-install-recommends gnustep gnustep-devel
+
 RUN apt update && apt -y install \
                                 # optional
                                 vim \
@@ -16,7 +22,7 @@ RUN apt update && apt -y install \
                                 libgl1-mesa-dev \
                                 xorg-dev  \
                                 libasound2-dev\
-                                golang-1.12-go \
+                                golang-1.13-go \
                                 # cross compile for windows
                                 tofrodos \
                                 gcc-mingw-w64-i686 \
