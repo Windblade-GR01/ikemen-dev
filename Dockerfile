@@ -1,4 +1,4 @@
-FROM ubuntu:disco
+FROM ubuntu:eoan
 
 MAINTAINER Gacel Fernando Muñoz Diaz
 
