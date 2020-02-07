@@ -72,7 +72,7 @@ RUN cd /tmp \
          && rm -rf openal-soft-1.19.1-bin.zip openal-soft-1.19.1-bin
 
 # golang envs
-ENV PATH=$PATH:/usr/lib/go-1.12/bin
+ENV PATH=$PATH:/usr/lib/go-1.13/bin
 ENV CGO_ENABLED=1
 
 # mac cross compile envs
