@@ -6,7 +6,7 @@ RUN apt update
 
 # GNUstep
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-RUN apt-get install -y --no-install-recommends gnustep gnustep-devel
+RUN apt-get install -y gnustep gnustep-devel
 
 RUN apt update && apt -y install \
                                 # optional
@@ -28,6 +28,7 @@ RUN apt update && apt -y install \
                                 gcc-mingw-w64-i686 \
                                 gcc-mingw-w64-x86-64 \
                                 # cross compile for mac
+                                gobjc \
                                 clang-8 \
                                 lldb-8 \
                                 wget \
