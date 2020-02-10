@@ -23,12 +23,14 @@ RUN apt update && apt -y install \
                                 xorg-dev  \
                                 libasound2-dev\
                                 golang-1.13-go \
+                                # github.com/sqweek/dialog
+                                libglib2.0-dev \
+                                gobjc \
                                 # cross compile for windows
                                 tofrodos \
                                 gcc-mingw-w64-i686 \
                                 gcc-mingw-w64-x86-64 \
                                 # cross compile for mac
-                                gobjc \
                                 clang-8 \
                                 lldb-8 \
                                 wget \
