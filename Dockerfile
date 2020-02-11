@@ -39,9 +39,9 @@ RUN apt update && apt -y install \
                                 lldb-8 \
                                 wget \
                                 cmake \
-                                pkg-config \
-
-
+                                pkg-config
+                                
+                                
 # cross compile mac dependencies
 ENV OSXCROSS_SDK_VERSION 10.11
 ENV OSXCROSS_SDK_URL https://github.com/apriorit/osxcross-sdks/raw/master/MacOSX${OSXCROSS_SDK_VERSION}.sdk.tar.xz
