@@ -29,6 +29,7 @@ RUN apt update && apt -y install \
                                 libglib2.0-dev \
                                 gobjc \
                                 gdk-3.0 \
+                                libgtk-3-dev\
                                 # cross compile for windows
                                 tofrodos \
                                 gcc-mingw-w64-i686 \
@@ -37,7 +38,8 @@ RUN apt update && apt -y install \
                                 clang-8 \
                                 lldb-8 \
                                 wget \
-                                cmake
+                                cmake \
+                                pkg-config \
 
 
 # cross compile mac dependencies
