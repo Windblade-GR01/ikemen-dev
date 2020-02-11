@@ -24,6 +24,8 @@ RUN apt update && apt -y install \
                                 libasound2-dev\
                                 golang-1.13-go \
                                 # github.com/sqweek/dialog
+                                libcairo2-dev \
+                                libcairo-gobject2 \ 
                                 libglib2.0-dev \
                                 gobjc \
                                 # cross compile for windows
