@@ -28,6 +28,7 @@ RUN apt update && apt -y install \
                                 libcairo-gobject2 \ 
                                 libglib2.0-dev \
                                 gobjc \
+                                gdk-3.0 \
                                 # cross compile for windows
                                 tofrodos \
                                 gcc-mingw-w64-i686 \
