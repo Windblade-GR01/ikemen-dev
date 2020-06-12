@@ -1,4 +1,4 @@
-FROM ubuntu:eoan
+FROM ubuntu:focal
 
 MAINTAINER Gacel Fernando Muñoz Diaz
 
@@ -22,7 +22,7 @@ RUN apt update && apt -y install \
                                 libgl1-mesa-dev \
                                 xorg-dev  \
                                 libasound2-dev\
-                                golang-1.13-go \
+                                golang-1.14-go \
                                 # github.com/sqweek/dialog
                                 libcairo2-dev \
                                 libcairo-gobject2 \ 
