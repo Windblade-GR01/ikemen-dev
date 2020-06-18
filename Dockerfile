@@ -22,13 +22,12 @@ RUN apt update && apt -y install \
                                 libgl1-mesa-dev \
                                 xorg-dev  \
                                 libasound2-dev\
-                                golang-1.14-go \
+                                golang-1.13-go \
                                 # github.com/sqweek/dialog
                                 libcairo2-dev \
                                 libcairo-gobject2 \ 
                                 libglib2.0-dev \
                                 gobjc \
-                                gdk-3.0 \
                                 libgtk-3-dev\
                                 # cross compile for windows
                                 tofrodos \
