@@ -34,8 +34,8 @@ RUN apt update && apt -y install \
 								gcc-mingw-w64-i686 \
 								gcc-mingw-w64-x86-64 \
 								# cross compile for mac
-								clang-8 \
-								lldb-8 \
+								clang-11 \
+								lldb-11 \
 								wget \
 								cmake \
 								pkg-config
