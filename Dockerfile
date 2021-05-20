@@ -31,12 +31,6 @@ RUN apt update && apt -y install \
 	libcairo2-dev \
 	libcairo-gobject2 \
 	libglib2.0-dev \
-	# dependencies
-	libopenal1\
-	libopenal-dev  \
-	libgl1-mesa-dev \
-	xorg-dev \
-	libasound2-dev \
 	# cross compile for windows
 	tofrodos \
 	gcc-mingw-w64-i686 \
@@ -100,14 +94,21 @@ RUN echo "Configuring environment variables."
 RUN echo "------------------------------------------------------------"
 
 # GOlang envs.
-ENV PATH=$PATH:/usr/lib/go-1.13/bin
+ENV PATH=$PATH:/usr/lib/go-1.15/bin
+ENV CGO_ENABLED=1
 
 # MacOS cross compile envs.
+# ENV GOOS=darwin
+# ENV GOARCH=amd64
+# ENV CC=o64-clang 
+# ENV CXX=o64-clang++
 ENV PATH=$PATH:/opt/osxcross/target/bin
 ENV PATH=$PATH:/opt/osxcross/target/SDK/MacOSX${OSXCROSS_SDK_VERSION}.sdk/usr/include
 ENV PATH=$PATH:/opt/osxcross/target/SDK/MacOSX${OSXCROSS_SDK_VERSION}.sdk/usr
 
 # Windows crosscompile envs.
+# export CC=x86_64-w64-mingw32-gcc
+# export CXX=x86_64-w64-mingw32-g++
 CMD /bin/bash
 
 RUN echo ""
