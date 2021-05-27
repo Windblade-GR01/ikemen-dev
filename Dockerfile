@@ -31,6 +31,8 @@ RUN apt update && apt -y install \
 	libcairo2-dev \
 	libcairo-gobject2 \
 	libglib2.0-dev \
+	gdk-3.0 \
+	libgtk-3-dev\
 	# cross compile for windows
 	tofrodos \
 	gcc-mingw-w64-i686 \
@@ -68,12 +70,12 @@ RUN echo "------------------------------------------------------------"
 RUN echo "Dowloading OpenAL soft win-x64."
 RUN echo "------------------------------------------------------------"
 RUN cd /tmp \
-		&& curl -SLO https://openal-soft.org/openal-binaries/openal-soft-1.21.0-bin.zip \
-		&& unzip openal-soft-1.21.0-bin.zip \
-		&& mv /tmp/openal-soft-1.21.0-bin/include/AL /lib/gcc/x86_64-w64-mingw32/9.3-win32/include \
-		&& mv /tmp/openal-soft-1.21.0-bin/libs/Win64/libOpenAL32.dll.a /lib/gcc/x86_64-w64-mingw32/9.3-win32/libopenal32.dll.a \
-		&& mv /tmp/openal-soft-1.21.0-bin/bin/Win64/soft_oal.dll /lib/gcc/x86_64-w64-mingw32/9.3-win32/soft_oal.dll \
-		&& rm -rf openal-soft-1.21.0-bin.zip openal-soft-1.21.0-bin
+		&& curl -SLO https://openal-soft.org/openal-binaries/openal-soft-1.21.1-bin.zip \
+		&& unzip openal-soft-1.21.1-bin.zip \
+		&& mv /tmp/openal-soft-1.21.1-bin/include/AL /lib/gcc/x86_64-w64-mingw32/9.3-win32/include \
+		&& mv /tmp/openal-soft-1.21.1-bin/libs/Win64/libOpenAL32.dll.a /lib/gcc/x86_64-w64-mingw32/9.3-win32/libopenal32.dll.a \
+		&& mv /tmp/openal-soft-1.21.1-bin/bin/Win64/soft_oal.dll /lib/gcc/x86_64-w64-mingw32/9.3-win32/soft_oal.dll \
+		&& rm -rf openal-soft-1.21.1-bin.zip openal-soft-1.21.1-bin
 RUN echo ""
 
 # cross compile win32 dependencies
@@ -81,12 +83,12 @@ RUN echo "------------------------------------------------------------"
 RUN echo "Dowloading OpenAL soft win-x86."
 RUN echo "------------------------------------------------------------"
 RUN cd /tmp \
-		&& curl -SLO https://openal-soft.org/openal-binaries/openal-soft-1.21.0-bin.zip \
-		&& unzip openal-soft-1.21.0-bin.zip \
-		&& mv /tmp/openal-soft-1.21.0-bin/include/AL /lib/gcc/i686-w64-mingw32/9.3-win32/include \
-		&& mv /tmp/openal-soft-1.21.0-bin/libs/Win32/libOpenAL32.dll.a /lib/gcc/i686-w64-mingw32/9.3-win32/libopenal32.dll.a \
-		&& mv /tmp/openal-soft-1.21.0-bin/bin/Win32/soft_oal.dll /lib/gcc/i686-w64-mingw32/9.3-win32/soft_oal.dll \
-		&& rm -rf openal-soft-1.21.0-bin.zip openal-soft-1.21.0-bin
+		&& curl -SLO https://openal-soft.org/openal-binaries/openal-soft-1.21.1-bin.zip \
+		&& unzip openal-soft-1.21.1-bin.zip \
+		&& mv /tmp/openal-soft-1.21.1-bin/include/AL /lib/gcc/i686-w64-mingw32/9.3-win32/include \
+		&& mv /tmp/openal-soft-1.21.1-bin/libs/Win32/libOpenAL32.dll.a /lib/gcc/i686-w64-mingw32/9.3-win32/libopenal32.dll.a \
+		&& mv /tmp/openal-soft-1.21.1-bin/bin/Win32/soft_oal.dll /lib/gcc/i686-w64-mingw32/9.3-win32/soft_oal.dll \
+		&& rm -rf openal-soft-1.21.1-bin.zip openal-soft-1.21.1-bin
 
 RUN echo ""
 RUN echo "------------------------------------------------------------"
