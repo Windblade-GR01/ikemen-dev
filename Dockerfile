@@ -31,7 +31,7 @@ RUN apt update && apt -y install \
 	libcairo2-dev \
 	libcairo-gobject2 \
 	libglib2.0-dev \
-	gdk-3.0 \
+	gtk-3.0 \
 	libgtk-3-dev\
 	# cross compile for windows
 	tofrodos \
