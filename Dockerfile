@@ -20,6 +20,8 @@ RUN apt update && apt -y install \
 	unzip \
 	# dependencies
 	git \
+	musl \
+	musl-dev \
 	libopenal1\
 	libopenal-dev  \
 	libgl1-mesa-dev \
