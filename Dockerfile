@@ -22,6 +22,7 @@ RUN apt update && apt -y install \
 	git \
 	musl \
 	musl-dev \
+	musl-tools \
 	libopenal1\
 	libopenal-dev  \
 	libgl1-mesa-dev \
@@ -69,6 +70,8 @@ RUN echo ""
 RUN echo "------------------------------------------------------------"
 RUN echo "Configuring environment variables."
 RUN echo "------------------------------------------------------------"
+
+RUN ld-musl-config
 
 # GOlang envs.
 ENV PATH=$PATH:/usr/lib/go-1.15/bin
